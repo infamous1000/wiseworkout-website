@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "WiseWorkout",
-  tagline: "Know your next session before you leave the gym",
+  tagline: "Fitness that fits your life",
   description:
-    "WiseWorkout reads the session you just finished — load, fatigue, and what you lifted last week — and gives you one decision for the next one. A Final Year Project by FYP26S215 at SIM–University of Wollongong.",
+    "Track workouts, runs, rides and calories, follow a plan built around your schedule, join challenges and find a coach — all in one app. A Final Year Project by FYP26S215 at SIM–University of Wollongong.",
 
   academic: {
     group: "FYP26S215",
@@ -19,8 +19,10 @@ export const siteConfig = {
     { label: "About", href: "/about" },
   ],
 
-  /* The single conversion verb. Same word on every button and in the toast. */
-  cta: "Join the beta",
+  /* One conversion verb. Same words on every button and in the toast it produces.
+     Not "Get Started" — the app is pre-launch, so that would promise access
+     that does not exist yet. */
+  cta: "Get early access",
 
   announcement: {
     text: "Beta opens March 2026",
@@ -29,162 +31,187 @@ export const siteConfig = {
   },
 
   hero: {
-    eyebrow: "For lifters six months in who've stopped seeing the numbers move",
-    headline: "Know your next session before you leave the gym.",
+    eyebrow: "Gym, running, cycling and food — in one app",
+    headline: "Fitness that fits your life.",
     subhead:
-      "WiseCoach reads the set you just finished — load, fatigue, and what you lifted last week — and gives you one decision. Not a chart. About 90 seconds after your last rep.",
+      "Track workouts, runs, rides and calories. Follow a plan built around the days and hours you actually have. Join challenges, find a coach, and train alongside people going the same way.",
     secondaryCta: "See how it works",
     secondaryHref: "/#how-it-works",
   },
 
-  /* Signature element. Every value here also appears on the phone screen these
-     cards orbit, or in `stats` below — the cards and the screen are one account. */
+  /* Signature element: cards orbiting the hero phone. Every value here is real —
+     it appears on a screen in /public/app. */
   notifications: [
     {
-      title: "Bench volume up 12% this week",
-      meta: "Push A · week 6 of your block",
+      title: "Today's plan is ready",
+      meta: "Push + Cardio Finisher · 31 min",
       accent: "blue" as const,
       rotate: -3,
     },
     {
-      title: "Recovery is low",
-      meta: "Swapped legs for 25 min zone 2",
-      accent: "red" as const,
+      title: "1,320 kcal in · 90g protein",
+      meta: "Counted against what you trained",
+      accent: "none" as const,
       rotate: 2,
     },
     {
-      title: "7-day streak",
-      meta: "Squad rank #2 of 6",
+      title: "17-day streak",
+      meta: "Your longest yet",
       accent: "amber" as const,
       rotate: 3,
     },
     {
-      title: "Push A finished in 47 min",
-      meta: "Fastest yet — 1,240kg moved",
+      title: "Challenge joined",
+      meta: "100 cal target · 6 people in",
       accent: "none" as const,
       rotate: -2,
     },
   ],
 
   problem: {
-    heading: "You logged 47 sessions. Name one decision they changed.",
-    lede: "Training stalls in three specific places. None of them is a lack of data.",
+    heading: "Right now, this takes four apps.",
+    lede: "One for lifting. One for runs. One for food. And a group chat where you try to stay accountable. None of them know what the others know.",
     items: [
       {
-        label: "The plateau",
-        title: "Your log grew. Your lifts didn't.",
-        body: "Six months of sessions and the bar weight is where it was in March. The app recorded every rep and never once told you to change anything.",
+        label: "Scattered",
+        title: "Your week never adds up to one picture.",
+        body: "The run is in one app, the sets in another, dinner in a third. Nothing tells you how the whole week actually went.",
       },
       {
-        label: "The scatter",
-        title: "Your programme lives in four places.",
-        body: "A note for the block, a video for the cue, a spreadsheet for the numbers, a chat thread for the deload argument. Nothing reconciles.",
+        label: "One-size plans",
+        title: "Most plans assume you have an hour, five days a week.",
+        body: "You don't. So you start, miss two sessions, and stop — not because you lack discipline, but because the plan never matched your week.",
       },
       {
-        label: "The drop-off",
-        title: "Week three is where it ends.",
-        body: "Not because discipline failed. Because nothing was watching, so skipping a session cost you nothing.",
+        label: "On your own",
+        title: "Week three is where most people quit.",
+        body: "Nothing is watching, nobody notices, and skipping a session costs you nothing at all.",
       },
     ],
   },
 
   mechanism: {
-    name: "the session-to-decision loop",
-    eyebrow: "The session-to-decision loop",
-    heading: "Three steps. Then it runs on its own.",
-    lede: "Set it up once. After that the loop closes itself at the end of every session.",
+    eyebrow: "Getting started",
+    heading: "Six questions. Then a plan that fits.",
+    lede: "No spreadsheets and no guesswork. WiseWorkout builds around the time, equipment and experience you actually have.",
     steps: [
       {
         number: "01",
-        title: "Tell it what you have",
-        body: "Goal, injuries, equipment in your gym, and how many days you can actually train. Four screens, under two minutes.",
+        title: "Tell it about your week",
+        body: "How many days you can train — 2 to 6 — and how long a session realistically runs: 30, 45, 60 or 75+ minutes. Pick what's true, not what's ideal.",
       },
       {
         number: "02",
-        title: "Train and log",
-        body: "Tap sets as you go. Rest timer and last week's numbers sit on the same screen, so nothing needs typing between sets.",
+        title: "Tell it what you've got",
+        body: "Gym, cardio, or both. Home bodyweight, a full gym, or outdoors. It only programmes what you can actually get your hands on.",
       },
       {
         number: "03",
-        title: "Read the decision",
-        body: "About 90 seconds after your last rep, WiseCoach gives you one instruction for next session — push, hold, or back off — and the sentence explaining why.",
+        title: "Get your plan",
+        body: "Beginner, intermediate or advanced — calibrated to match. Connect Apple Health and your steps, heart rate, sleep and workouts sync in on their own.",
       },
     ],
   },
 
   featuresIntro: {
     eyebrow: "Features",
-    heading: "Four things it does. Each one ends in a decision.",
+    heading: "Five things it does. All on the same screen.",
   },
 
   features: [
     {
+      eyebrow: "Food",
+      title: "Know what you're actually eating.",
+      hook: "Calories and macros sitting on the same screen as your training.",
+      explanation:
+        "Log your meals and WiseWorkout tracks what went in, what you burned, and what's left for the day — with protein, carbs and fat broken out. What you eat and what you train are the same problem, so they live in the same place.",
+      outcome: "One glance tells you where the day stands.",
+      image: "/app/main.png",
+      alt: "WiseWorkout home screen showing a 17-day streak, a calorie ring with intake and macros, and today's plan",
+    },
+    {
+      eyebrow: "Plans",
+      title: "A workout that fits the time you have.",
+      hook: "Filter by level, goal and sport — then follow it day by day.",
+      explanation:
+        "Gym splits, cardio blocks, or combined programmes that pair real strength work with a cardio finisher. Take one from the library or build your own custom routine and keep it alongside the rest.",
+      outcome: "Twenty minutes or a full hour — there's something for the week you're actually having.",
+      image: "/app/plans.png",
+      alt: "Explore Plans screen with level, goal and sport filters, featured plans, and separate gym and cardio plan lists",
+    },
+    {
       eyebrow: "WiseCoach",
-      title: "One instruction. Not twelve charts.",
-      hook: "After every session WiseCoach returns a single line: push, hold, or back off.",
+      title: "Ask anything, and get an answer that knows your training.",
+      hook: "WiseCoach reads your training history, current plan and injury profile before it replies.",
       explanation:
-        "It reads the load you just moved against your last four weeks, the fatigue signal from your logged sleep and completion rate, and the days left in your block. The reasoning sits underneath in one sentence, so you can disagree with it.",
-      outcome: "You leave the gym knowing Thursday's session. You don't build it Thursday morning.",
-      visualType: "coach" as const,
+        "Not a blank chat window you have to re-explain yourself to. Ask what to do on leg day, how to swap an exercise around an injury, or why the last month stalled. It's general guidance, not medical advice — and when you want a person instead, Find Professional is on the same screen.",
+      outcome: "An answer grounded in what you've actually been doing.",
+      image: "/app/ai.png",
+      alt: "WiseCoach chat screen showing it uses training history, current plan and injury profile, with a Find Professional button",
     },
     {
-      eyebrow: "Adaptive plans",
-      title: "The block rewrites itself when you miss a week.",
-      hook: "Miss Wednesday and the plan doesn't shift a day. It redistributes the volume.",
+      eyebrow: "Club",
+      title: "Don't train alone.",
+      hook: "Challenges, a leaderboard, and a feed of what everyone actually did.",
       explanation:
-        "Plans are built around your equipment, your available days, and the lifts you're actually trying to move. When work or illness takes a week, the remaining sessions absorb it instead of the block collapsing.",
-      outcome: "Nothing to rebuild. The next screen already accounts for the week you lost.",
-      visualType: "plans" as const,
+        "Join a public challenge or create your own with a target — calories, distance, whatever you're chasing. Follow friends, see their sessions land in the feed, and watch where you sit on the board.",
+      outcome: "The weeks you don't feel like training are the weeks this earns its place.",
+      image: "/app/chellenges.png",
+      alt: "Club screen with Leaderboard, Challenges and Feed tabs, showing public challenges you can join",
     },
     {
-      eyebrow: "Squads",
-      title: "Five people can see whether you showed up.",
-      hook: "A squad is up to six people and one shared board. Sessions logged, streaks live, nothing else.",
+      eyebrow: "Progress",
+      title: "See whether any of it is working.",
+      hook: "Calories burned, gym volume, pace and distance — by week, month or year.",
       explanation:
-        "No feed, no photos, no comment section. The only thing visible is whether you trained. XP and streaks exist because week three is where people quit, and quitting quietly is easier than quitting in front of five people.",
-      outcome: "Consistency stops depending on how you feel on a Tuesday.",
-      visualType: "social" as const,
-    },
-    {
-      eyebrow: "Progress analytics",
-      title: "Numbers that end in a decision.",
-      hook: "Volume, pace, heart rate and calories, tracked per lift and per block.",
-      explanation:
-        "Every chart is wired back into the loop. A downward trend on your main lift isn't a red line you notice in March — it's the reason next week's session changed in January.",
-      outcome: "You can point at what the last twelve weeks bought you.",
-      visualType: "analytics" as const,
+        "Every session lands in your charts and activity history, tagged gym, cardio, manual or custom. You earn XP for what you finish and level up as the weeks stack, so the boring middle of a training block still shows movement.",
+      outcome: "Proof that the last three months went somewhere.",
+      image: "/app/progress.png",
+      alt: "Progress screen showing weekly calories burned and gym training charts with week, month and year views",
     },
   ],
 
+  personas: {
+    eyebrow: "Built for real weeks",
+    heading: "Your goals. Your schedule. Your way.",
+    lede: "There is no one-size-fits-all plan. WiseWorkout adapts to the person actually using it.",
+    items: [
+      { label: "Only 20 minutes", body: "Short, focused sessions that still count." },
+      { label: "Three days a week", body: "A plan built for the days you really have." },
+      { label: "Training for a race", body: "Every run, pace and kilometre tracked." },
+      { label: "Out on the bike", body: "Log rides and watch the distance stack up." },
+      { label: "Trying to lose weight", body: "Meals, macros and activity in one place." },
+      { label: "Starting from zero", body: "Beginner plans, and a coach to ask when you're stuck." },
+    ],
+  },
+
   comparison: {
-    heading: "Hevy logs better. Strong is faster. Here's what none of them do.",
-    lede: "The honest version: these are good apps and we use them. The gap has never been recording the session. It's what happens after it.",
+    heading: "Or you could keep using four apps.",
+    lede: "Each of these does its own job well. The problem is that none of them knows what the others know.",
     rows: [
       {
-        name: "Hevy",
-        credit:
-          "The deepest exercise database and the cleanest set logger on the market. If all you want is a log, use Hevy.",
-        gap: "It records the session and stops. Next week's plan is still yours to write.",
+        name: "A running app",
+        credit: "Excellent GPS, splits and pace history.",
+        gap: "It has no idea you lifted yesterday, or that you've only eaten 1,200 calories today.",
       },
       {
-        name: "Strong",
-        credit:
-          "The fastest set entry we've tested. Plate maths and rest timers are genuinely excellent.",
-        gap: "No read on fatigue. A deload is something you decide, not something it tells you.",
+        name: "A calorie app",
+        credit: "Food databases twenty years deep.",
+        gap: "It counts what goes in and guesses what goes out. Your training is somebody else's data.",
       },
       {
-        name: "MyFitnessPal",
-        credit: "A food database twenty years deep that nothing else comes close to.",
-        gap: "Nutrition and training never meet. Calories on one screen, load on another, no line drawn between them.",
+        name: "A workout logger",
+        credit: "Fast set entry and a deep exercise library.",
+        gap: "Runs and rides don't belong in it, and neither does the rest of your week.",
       },
       {
-        name: "ChatGPT and a spreadsheet",
-        credit: "Genuinely good at writing you a programme, once.",
-        gap: "It has no memory of your last four weeks unless you retype them, and it never sees the set you just failed.",
+        name: "A group chat",
+        credit: "Honestly, the only accountability most people have.",
+        gap: "It forgets, it drifts off-topic, and nobody is keeping score.",
       },
     ],
     close:
-      "WiseWorkout returns one decision after every session, from data you already logged.",
+      "WiseWorkout keeps all of it in one place — and uses the whole picture to shape what it gives you next.",
   },
 
   stats: {
@@ -199,8 +226,8 @@ export const siteConfig = {
   },
 
   offer: {
-    heading: "What you get for joining the beta",
-    lede: "WiseWorkout is a Final Year Project, not a company. There's no plan, no card, and no upsell waiting at the end. This is the whole of it.",
+    heading: "What you get for joining early",
+    lede: "WiseWorkout is a Final Year Project, not a company. There's no plan to buy and no upsell waiting at the end. This is the whole of it.",
     items: [
       {
         title: "The beta build, before public release",
@@ -252,51 +279,51 @@ export const siteConfig = {
     heading: "The questions we actually get",
     items: [
       {
+        question: "Is this just another workout tracker?",
+        answer:
+          "It's the four apps you're already using, in one. Workouts, runs and rides, calories and macros, and the people you train with all sit on the same screen — which means the plan it gives you can account for the whole week instead of one slice of it.",
+      },
+      {
+        question: "I don't have an hour a day.",
+        answer:
+          "That's the point. Setup asks how long your sessions realistically run — 30, 45, 60 or 75+ minutes — and how many days a week you can train, anywhere from 2 to 6. It programmes for that, not for an ideal week you don't have. The app's own words: shorter and focused often beats long and inconsistent.",
+      },
+      {
         question: "Is this just ChatGPT with a logo?",
         answer:
-          "No, and the difference is what it can see. A chat window starts empty every time — you'd have to retype four weeks of sets, your bodyweight trend, the equipment your gym has and the days you can train before it could say anything useful, and it would forget all of it by Thursday. WiseCoach reads five things you never type: your full session history, the volume trend on each main lift, the fatigue signal derived from logged sleep and set completion, the equipment you set at onboarding, and how many days are left in your block. There is a language model in the pipeline. It writes the sentence. It doesn't make the decision.",
+          "No, and the difference is what it can see. A chat window starts empty every time — you'd have to retype your last month of sets, your current plan and your injury history before it could say anything useful. WiseCoach already has all three and says so at the top of the thread. There is a language model writing the sentence; what makes the answer worth anything is the training data behind it. And when you want a person instead of a model, Find Professional is one tap away.",
       },
       {
-        question: "I already use Hevy. Why switch?",
+        question: "I already use a running app. Do I have to give it up?",
         answer:
-          "Don't, yet. Hevy's logger is better than ours and its exercise database is deeper. WiseWorkout is worth a look when your problem stops being 'record the session' and starts being 'decide the next one'. You can import your history and run both.",
+          "No. Connect Apple Health and your workouts, steps, heart rate and sleep sync in automatically, so runs you record elsewhere still count toward your week here. Plenty of people run both for a while.",
       },
       {
-        question: "I don't want another app nagging me.",
+        question: "I'm a complete beginner.",
         answer:
-          "One notification per session, sent after you finish. It's the decision. Streak and squad alerts are off until you turn them on, and there is no daily reminder to train.",
-      },
-      {
-        question: "It's a student project. Will it exist next year?",
-        answer:
-          "Honest answer: the project ends in 2026 and we can't promise a company on the other side of it. What we can promise is that everything you log exports as CSV at any time, and that if development stops we'll say so on this page rather than let it go quiet.",
+          "Pick Beginner at setup and the whole plan calibrates down to match. There are beginner plans in the library, WiseCoach answers the questions you'd rather not ask a stranger at the gym, and if you want a real person, you can search for one in the app.",
       },
       {
         question: "What does it cost?",
         answer:
-          "The beta is free and there is nothing to buy. We haven't priced a paid version because we haven't built one.",
-      },
-      {
-        question: "What data do you collect?",
-        answer:
-          "Your email, for the waitlist. Inside the app: the workouts you log and the answers you give at onboarding. No location, no contacts, no advertising SDKs, and no sale of training data to anyone.",
+          "The beta is free and there's nothing to buy. WiseCoach comes with 25 free messages a month. We haven't priced a paid version because we haven't built one.",
       },
     ],
   },
 
   finalCta: {
-    heading: "Know your next session before you leave the gym.",
-    lede: "Beta opens March 2026. The list is how you get in.",
+    heading: "Your fitness. Your way.",
+    lede: "Start building a routine that fits the week you're actually having — not the one a plan assumes you have.",
     riskReversal: "One email. No card, no ads, leave whenever.",
   },
 
   waitlist: {
-    heading: "Join the beta",
+    heading: "Get early access",
     lede: "Beta opens March 2026. We'll email you once — when it's your turn to get in.",
     inputLabel: "Email",
     placeholder: "you@example.com",
-    submit: "Join the beta",
-    submitting: "Joining…",
+    submit: "Get early access",
+    submitting: "Sending…",
     successTitle: "You're on the list.",
     successBody: "We'll email you when the beta opens in March 2026. Nothing else.",
     duplicate: "That address is already on the list. You're set.",
@@ -306,7 +333,7 @@ export const siteConfig = {
 
   footer: {
     blurb:
-      "An AI fitness app that reads the session you just finished and tells you what to do in the next one. Built as a Final Year Project at SIM–University of Wollongong.",
+      "One app for workouts, runs, rides, food and the people you train with — built around your goals and your schedule. A Final Year Project at SIM–University of Wollongong.",
     groups: [
       {
         title: "Product",
