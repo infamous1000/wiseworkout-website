@@ -52,16 +52,24 @@ export default function Navbar() {
               scrolled ? "shadow-nav" : ""
             }`}
           >
-            <Link href="/" className="flex shrink-0 items-center rounded-full pl-1">
+            {/* Mark + live wordmark. The mark asset has no lettering of its own,
+                and system-ui type stays crisp at every density. */}
+            <Link
+              href="/"
+              className="flex shrink-0 items-center gap-2 rounded-full pl-1"
+            >
               <Image
-                src="/images/logo-full.png"
-                alt={siteConfig.name}
-                width={320}
-                height={90}
-                unoptimized
+                src="/images/logo-mark.png"
+                alt=""
+                aria-hidden
+                width={430}
+                height={430}
                 priority
-                className="h-7 w-auto md:h-8"
+                className="h-7 w-7 object-contain md:h-8 md:w-8"
               />
+              <span className="text-ui font-semibold tracking-[-0.02em] text-ink">
+                {siteConfig.name}
+              </span>
             </Link>
 
             <ul className="hidden items-center gap-6 md:flex">

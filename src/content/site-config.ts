@@ -25,7 +25,7 @@ export const siteConfig = {
   cta: "Get early access",
 
   announcement: {
-    text: "Beta opens March 2026",
+    text: "Beta opens 22 August",
     linkLabel: "Join the list",
     href: "/#join",
   },
@@ -319,13 +319,13 @@ export const siteConfig = {
 
   waitlist: {
     heading: "Get early access",
-    lede: "Beta opens March 2026. We'll email you once — when it's your turn to get in.",
+    lede: "Beta opens 22 August. We'll email you once — when it's your turn to get in.",
     inputLabel: "Email",
     placeholder: "you@example.com",
     submit: "Get early access",
     submitting: "Sending…",
     successTitle: "You're on the list.",
-    successBody: "We'll email you when the beta opens in March 2026. Nothing else.",
+    successBody: "We'll email you on 22 August when the beta opens. Nothing else.",
     duplicate: "That address is already on the list. You're set.",
     error: "Something went wrong. Try again in a moment.",
     riskReversal: "No card. No ads. Unsubscribe in one click.",

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import { checkAdminPassword } from "@/lib/admin-auth";
 import { normalizeWeekLabel } from "@/lib/week-label";
 
 async function parseRequestBody(req: Request) {
@@ -17,22 +18,12 @@ async function parseRequestBody(req: Request) {
   return { data: body as Record<string, unknown> };
 }
 
-function validateAdminPassword(data: Record<string, unknown>) {
-  const password = String(data.password ?? "");
-  const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "";
-  if (!adminPassword || password !== adminPassword) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  return null;
-}
-
 export async function POST(req: Request) {
   const parsed = await parseRequestBody(req);
   if (parsed.error) return parsed.error;
 
   const data = parsed.data;
-  const authError = validateAdminPassword(data);
+  const authError = checkAdminPassword(data);
   if (authError) return authError;
 
   const week_label = normalizeWeekLabel(String(data.week_label ?? ""));
@@ -64,7 +55,7 @@ export async function PUT(req: Request) {
   if (parsed.error) return parsed.error;
 
   const data = parsed.data;
-  const authError = validateAdminPassword(data);
+  const authError = checkAdminPassword(data);
   if (authError) return authError;
 
   const id = String(data.id ?? "").trim();
@@ -100,7 +91,7 @@ export async function DELETE(req: Request) {
   if (parsed.error) return parsed.error;
 
   const data = parsed.data;
-  const authError = validateAdminPassword(data);
+  const authError = checkAdminPassword(data);
   if (authError) return authError;
 
   const id = String(data.id ?? "").trim();

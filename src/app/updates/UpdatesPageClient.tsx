@@ -16,6 +16,7 @@ import {
   BookOpen,
   ClipboardList,
   AlertCircle,
+  Loader2,
 } from "lucide-react";
 import FadeInUp from "@/components/animations/FadeInUp";
 import { StaggerChildren, StaggerItem } from "@/components/animations/StaggerChildren";
@@ -275,6 +276,8 @@ export default function UpdatesPageClient({
   const [showAdminModal, setShowAdminModal] = useState(false);
   const [adminUnlocked, setAdminUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
+  const [verifying, setVerifying] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const [adminFormTab, setAdminFormTab] = useState<AdminFormTab>("minutes");
   const [submitting, setSubmitting] = useState(false);
@@ -364,19 +367,44 @@ export default function UpdatesPageClient({
     setShowAdminModal(false);
     setAdminUnlocked(false);
     setPasswordInput("");
+    setAdminPassword("");
     setPasswordError("");
     resetMinutesForm();
     resetDiaryForm();
   }
 
-  function handlePasswordSubmit(e: FormEvent) {
+  /* The password is verified on the server and then held in memory for this
+     session only. It is never read from the environment on the client — that
+     would put it in the browser bundle. */
+  async function handlePasswordSubmit(e: FormEvent) {
     e.preventDefault();
-    const correct = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "wiseworkout2025";
-    if (passwordInput === correct) {
-      setAdminUnlocked(true);
-      setPasswordError("");
-    } else {
-      setPasswordError("Incorrect password. Try again.");
+    setVerifying(true);
+    setPasswordError("");
+
+    try {
+      const res = await fetch("/api/admin/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: passwordInput }),
+      });
+
+      if (res.ok) {
+        setAdminPassword(passwordInput);
+        setAdminUnlocked(true);
+        setPasswordInput("");
+        return;
+      }
+
+      const d = (await res.json().catch(() => ({}))) as { error?: string };
+      setPasswordError(
+        res.status === 503
+          ? (d.error ?? "Admin is not configured on this server.")
+          : "Incorrect password. Try again.",
+      );
+    } catch {
+      setPasswordError("Network error. Please try again.");
+    } finally {
+      setVerifying(false);
     }
   }
 
@@ -390,7 +418,7 @@ export default function UpdatesPageClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id: editingMinuteId,
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "wiseworkout2025",
+          password: adminPassword,
           week_label: mmWeek,
           meeting_date: mmDate,
           meeting_time: mmTime,
@@ -432,7 +460,7 @@ export default function UpdatesPageClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id: entry.id,
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "wiseworkout2025",
+          password: adminPassword,
         }),
       });
 
@@ -462,7 +490,7 @@ export default function UpdatesPageClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id: minute.id,
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "wiseworkout2025",
+          password: adminPassword,
         }),
       });
 
@@ -490,7 +518,7 @@ export default function UpdatesPageClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id: editingDiaryId,
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "wiseworkout2025",
+          password: adminPassword,
           week_label: deWeek,
           name: deName,
           body: deBody,
@@ -770,9 +798,17 @@ export default function UpdatesPageClient({
                     {/* The one filled #007bff button on this surface */}
                     <button
                       type="submit"
-                      className="rounded-full bg-signal-blue py-3 text-ui font-semibold text-white transition-colors hover:bg-[#0069d9] disabled:opacity-60"
+                      disabled={verifying}
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-signal-blue py-3 text-ui font-semibold text-white transition-colors hover:bg-[#0069d9] disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Unlock
+                      {verifying ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Checking…
+                        </>
+                      ) : (
+                        "Unlock"
+                      )}
                     </button>
                   </form>
                 ) : (

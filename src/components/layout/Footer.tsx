@@ -13,10 +13,10 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 rounded-full">
               <Image
                 src="/images/logo-mark.png"
-                alt={`${siteConfig.name} logo`}
-                width={80}
-                height={80}
-                unoptimized
+                alt=""
+                aria-hidden
+                width={430}
+                height={430}
                 className="h-10 w-10 object-contain"
               />
               <span className="text-heading-sm font-semibold text-white">
