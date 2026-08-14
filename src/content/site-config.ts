@@ -91,7 +91,7 @@ export const siteConfig = {
   },
 
   mechanism: {
-    eyebrow: "Getting started",
+    eyebrow: "Plan Match",
     heading: "Six questions. Then a plan that fits.",
     lede: "No spreadsheets and no guesswork. WiseWorkout builds around the time, equipment and experience you actually have.",
     steps: [
@@ -113,6 +113,50 @@ export const siteConfig = {
     ],
   },
 
+  /* USP 1 in the project documentation. Five named mechanisms — this is the
+     evidence behind "fits your life", not a slogan. */
+  adaptive: {
+    eyebrow: "When life gets in the way",
+    heading: "Built for the weeks that don't go to plan.",
+    lede: "Most plans assume nothing interrupts them. These five exist because something always does.",
+    items: [
+      {
+        name: "Compress Workout",
+        body: "Short on time? Shorten the session you already had scheduled instead of skipping it.",
+      },
+      {
+        name: "Missed Workout Check-in",
+        body: "Miss one and the app records it, acknowledges it, and moves on. No silent guilt-tripping.",
+      },
+      {
+        name: "Break Mode",
+        body: "Going away, ill, or just need to stop? Pause reminders and missed-session tracking for as many days as you choose.",
+      },
+      {
+        name: "Resume",
+        body: "Walk out mid-workout and the tracked session is still there, saved where you left it.",
+      },
+      {
+        name: "Injury-aware filtering",
+        body: "Record your injury areas and WiseWorkout avoids or flags exercises that involve them.",
+      },
+    ],
+
+    /* The one mechanism in the list that is easier shown than described — three
+       real screens, in the order you meet them. Captions are index-matched to
+       the shots in AdaptiveSection. */
+    injury: {
+      title: "What injury-aware filtering actually looks like",
+      body: "You record the area once. From then on it travels with you into every session the app can check.",
+      captions: [
+        "Log the area and how bad it is. The filtering itself is a switch you control.",
+        "Before the session starts, anything that touches it is flagged. Keep it or drop it — the call stays yours.",
+        "Outdoor cardio opens with the same reminder rather than a silent block.",
+      ],
+      note: "Guidance, not medical advice — the app says so on the screen where you record the injury.",
+    },
+  },
+
   featuresIntro: {
     eyebrow: "Features",
     heading: "Five things it does. All on the same screen.",
@@ -121,13 +165,21 @@ export const siteConfig = {
   features: [
     {
       eyebrow: "Food",
-      title: "Know what you're actually eating.",
-      hook: "Calories and macros sitting on the same screen as your training.",
+      title: "Three ways to log a meal.",
+      hook: "Describe it in words, photograph it, or scan the barcode.",
       explanation:
-        "Log your meals and WiseWorkout tracks what went in, what you burned, and what's left for the day — with protein, carbs and fat broken out. What you eat and what you train are the same problem, so they live in the same place.",
+        "Type what you ate and WiseWorkout works out the calories and macros. Point the camera at the plate, or scan a packet — photo and barcode capture are Premium. What comes back is labelled an estimate, with the assumption it made written underneath, and it lands on the same screen as your training with protein, carbs and fat broken out.",
       outcome: "One glance tells you where the day stands.",
-      image: "/app/main.png",
-      alt: "WiseWorkout home screen showing a 17-day streak, a calorie ring with intake and macros, and today's plan",
+      screens: [
+        {
+          src: "/app/food_scan.png",
+          alt: "Log a Meal screen with Scan, Barcode and Describe tabs, camera pointed at a plate of rice, egg, pork and greens",
+        },
+        {
+          src: "/app/food_result.png",
+          alt: "Estimated result for the photographed meal: 700 calories with 30g protein, 90g carbs and 25g fat, marked as an estimate",
+        },
+      ],
     },
     {
       eyebrow: "Plans",
@@ -136,28 +188,44 @@ export const siteConfig = {
       explanation:
         "Gym splits, cardio blocks, or combined programmes that pair real strength work with a cardio finisher. Take one from the library or build your own custom routine and keep it alongside the rest.",
       outcome: "Twenty minutes or a full hour — there's something for the week you're actually having.",
-      image: "/app/plans.png",
-      alt: "Explore Plans screen with level, goal and sport filters, featured plans, and separate gym and cardio plan lists",
+      screens: [
+        {
+          src: "/app/plans.png",
+          alt: "Explore Plans screen with level, goal and sport filters, featured plans, and separate gym and cardio plan lists",
+        },
+      ],
     },
     {
       eyebrow: "WiseCoach",
-      title: "Ask anything, and get an answer that knows your training.",
-      hook: "WiseCoach reads your training history, current plan and injury profile before it replies.",
+      title: "It explains your session before you ask.",
+      hook: "Every finished workout gets a short recap in plain language, automatically.",
       explanation:
-        "Not a blank chat window you have to re-explain yourself to. Ask what to do on leg day, how to swap an exercise around an injury, or why the last month stalled. It's general guidance, not medical advice — and when you want a person instead, Find Professional is on the same screen.",
-      outcome: "An answer grounded in what you've actually been doing.",
-      image: "/app/ai.png",
-      alt: "WiseCoach chat screen showing it uses training history, current plan and injury profile, with a Find Professional button",
+        "Finish a gym, cardio or combined session and the recap is waiting on the session itself, next to the numbers it is describing. Where there is history to draw on it adds the context — recent comparable sessions, how the week is tracking against your plan, where the streak stands. Separately you can ask WiseCoach anything: what to do on leg day, how to work around an injury, why last month stalled. It reads your training history, current plan and injury profile before replying. General guidance, not medical advice.",
+      outcome: "You get the meaning, not another chart to interpret.",
+      screens: [
+        {
+          src: "/app/ai.png",
+          alt: "WiseCoach chat screen showing it uses training history, current plan and injury profile, with a Find Professional button",
+        },
+        {
+          src: "/app/session_recap.png",
+          alt: "A finished night cycling session showing duration, distance, pace, calories and elevation, a WiseCoach summary of the session, XP earned and the route map",
+        },
+      ],
     },
     {
       eyebrow: "Club",
       title: "Don't train alone.",
-      hook: "Challenges, a leaderboard, and a feed of what everyone actually did.",
+      hook: "Friends, challenges, a weekly XP leaderboard — and none of it compulsory.",
       explanation:
-        "Join a public challenge or create your own with a target — calories, distance, whatever you're chasing. Follow friends, see their sessions land in the feed, and watch where you sit on the board.",
+        "Join a public challenge or set up a private one with friends. Follow people, react and comment on workout and nutrition posts, and see where you land on the weekly XP board. Train entirely on your own if you prefer — planning, tracking and coaching never depend on any of it.",
       outcome: "The weeks you don't feel like training are the weeks this earns its place.",
-      image: "/app/chellenges.png",
-      alt: "Club screen with Leaderboard, Challenges and Feed tabs, showing public challenges you can join",
+      screens: [
+        {
+          src: "/app/chellenges.png",
+          alt: "Club screen with Leaderboard, Challenges and Feed tabs, showing public challenges you can join",
+        },
+      ],
     },
     {
       eyebrow: "Progress",
@@ -166,8 +234,12 @@ export const siteConfig = {
       explanation:
         "Every session lands in your charts and activity history, tagged gym, cardio, manual or custom. You earn XP for what you finish and level up as the weeks stack, so the boring middle of a training block still shows movement.",
       outcome: "Proof that the last three months went somewhere.",
-      image: "/app/progress.png",
-      alt: "Progress screen showing weekly calories burned and gym training charts with week, month and year views",
+      screens: [
+        {
+          src: "/app/progress.png",
+          alt: "Progress screen showing weekly calories burned and gym training charts with week, month and year views",
+        },
+      ],
     },
   ],
 
@@ -185,33 +257,41 @@ export const siteConfig = {
     ],
   },
 
+  /* Named competitors and their strengths come from the project's own competitor
+     research (Freeletics, Fitbod, Strava, Hevy, MyFitnessPal). The honest finding
+     is that none of these capabilities is unique in isolation — the integration is. */
   comparison: {
-    heading: "Or you could keep using four apps.",
-    lede: "Each of these does its own job well. The problem is that none of them knows what the others know.",
+    heading: "Every one of these does its job well.",
+    lede: "We looked hard at the apps people already use. Taken one at a time, nothing WiseWorkout does is unheard of. The difference is that here it is all one workflow instead of five.",
     rows: [
       {
-        name: "A running app",
-        credit: "Excellent GPS, splits and pace history.",
-        gap: "It has no idea you lifted yesterday, or that you've only eaten 1,200 calories today.",
+        name: "Freeletics",
+        credit: "Adapts sessions on the fly and personalises training with AI.",
+        gap: "Built around its own bodyweight-first programming. Your gym log, runs and food live elsewhere.",
       },
       {
-        name: "A calorie app",
-        credit: "Food databases twenty years deep.",
-        gap: "It counts what goes in and guesses what goes out. Your training is somebody else's data.",
+        name: "Fitbod",
+        credit: "Excellent at personalising strength workouts session to session.",
+        gap: "Strength is the whole product. Cardio, nutrition and any social accountability are somebody else's problem.",
       },
       {
-        name: "A workout logger",
-        credit: "Fast set entry and a deep exercise library.",
-        gap: "Runs and rides don't belong in it, and neither does the rest of your week.",
+        name: "Strava",
+        credit: "The best social layer in fitness, plus AI summaries of your activities.",
+        gap: "Runs and rides are first-class; structured gym programming and calorie tracking are not.",
       },
       {
-        name: "A group chat",
-        credit: "Honestly, the only accountability most people have.",
-        gap: "It forgets, it drifts off-topic, and nobody is keeping score.",
+        name: "Hevy",
+        credit: "Clean gym logging with solid progress charts and a social side.",
+        gap: "It records what you did. It does not reshape the week when you miss two sessions.",
+      },
+      {
+        name: "MyFitnessPal",
+        credit: "Camera and barcode food logging against a database twenty years deep.",
+        gap: "Knows what went in, guesses what went out. Your training is data it never sees.",
       },
     ],
     close:
-      "WiseWorkout keeps all of it in one place — and uses the whole picture to shape what it gives you next.",
+      "WiseWorkout puts planning, adaptive support, gym and cardio tracking, nutrition, AI interpretation, social accountability and access to real coaches in one place — and lets each one inform the next.",
   },
 
   stats: {
@@ -223,6 +303,63 @@ export const siteConfig = {
       { value: "7", label: "Day streak record" },
       { value: "1,240kg", label: "Volume lifted" },
     ],
+  },
+
+  /* Free/Premium reflects the implemented entitlement model. Payment collection is
+     NOT built — the in-app Upgrade action reads "Coming Soon". Do not imply otherwise.
+     TODO: 29 SGD is a placeholder supplied by the team; replace with the real
+     configured monthly price, and add the annual price once it is decided. */
+  pricing: {
+    eyebrow: "Free and Premium",
+    heading: "Free does the training. Premium lifts three limits.",
+    lede: "Basic training is not behind a paywall. Free users get planning, tracking, adaptive support, progress, nutrition, social features and coaching — the whole core product.",
+    price: "SGD 29",
+    priceSuffix: "/ month",
+    priceNote:
+      "Payment is not switched on yet. In the current build the Upgrade button reads Coming Soon, and the beta is free.",
+    rows: [
+      { area: "Plans, tracking, progress and social", free: "Included", premium: "Included" },
+      { area: "Compress, Missed Check-in, Break Mode, injury filtering", free: "Included", premium: "Included" },
+      { area: "Post-session WiseCoach recap", free: "Included", premium: "Included" },
+      { area: "WiseCoach typed chat", free: "25 messages a month", premium: "No cap" },
+      { area: "Describe a Meal", free: "Included", premium: "Included" },
+      { area: "Photo and barcode food scanning", free: "Locked", premium: "Included" },
+      { area: "Private challenges you create", free: "Up to 3", premium: "No cap" },
+    ],
+  },
+
+  coaches: {
+    eyebrow: "For fitness professionals",
+    heading: "Coach on WiseWorkout.",
+    lede: "Get verified, appear in Find a Professional, and take on clients who are already tracking their training.",
+    items: [
+      {
+        title: "Apply and get verified",
+        body: "Submit your credentials. An administrator reviews every application before a profile goes live.",
+      },
+      {
+        title: "Receive requests",
+        body: "Approved professionals appear in Find a Professional. Users send coaching requests; you accept or decline.",
+      },
+      {
+        title: "Publish your own plans",
+        body: "Write workout plans under your name and make them visible to the clients you have accepted.",
+      },
+    ],
+    /* Both ends of the same route: what a professional fills in, and what a user
+       sees once it has been approved. Captions are index-matched to the shots in
+       CoachesSection. */
+    shots: [
+      {
+        caption:
+          "The application. Coach type, experience, a bio — and at least one certificate, licence or proof of qualification, which is not optional.",
+      },
+      {
+        caption:
+          "What users see afterwards: approved professionals only, filtered by trainer, running coach, physiotherapist or nutritionist.",
+      },
+    ],
+    note: "Professional accounts are applied for inside the app and reviewed before they appear. The profiles above are internal test accounts from development.",
   },
 
   offer: {
@@ -291,7 +428,7 @@ export const siteConfig = {
       {
         question: "Is this just ChatGPT with a logo?",
         answer:
-          "No, and the difference is what it can see. A chat window starts empty every time — you'd have to retype your last month of sets, your current plan and your injury history before it could say anything useful. WiseCoach already has all three and says so at the top of the thread. There is a language model writing the sentence; what makes the answer worth anything is the training data behind it. And when you want a person instead of a model, Find Professional is one tap away.",
+          "No, and the difference is what it can see. A chat window starts empty every time — you'd have to retype your last month of sets, your current plan and your injury history before it could say anything useful. WiseCoach already has all three and says so at the top of the thread. It also writes a recap after every session without being asked, which a chat window cannot do at all. There is a language model writing the sentence; what makes the answer worth anything is the training data behind it. And when you want a person instead of a model, Find Professional is one tap away.",
       },
       {
         question: "I already use a running app. Do I have to give it up?",
@@ -306,7 +443,12 @@ export const siteConfig = {
       {
         question: "What does it cost?",
         answer:
-          "The beta is free and there's nothing to buy. WiseCoach comes with 25 free messages a month. We haven't priced a paid version because we haven't built one.",
+          "The beta is free. Beyond it there are two tiers: Free keeps the whole core product — planning, tracking, adaptive support, progress, nutrition, social and coaching — while Premium removes the 25-message monthly cap on WiseCoach chat, unlocks photo and barcode food scanning, and lifts the three-challenge limit. Premium is SGD 29 a month, but payment is not connected yet: in the current build the Upgrade button reads Coming Soon.",
+      },
+      {
+        question: "Do I need Premium to get anything useful?",
+        answer:
+          "No, and that was deliberate. Plans, Plan Match, gym and cardio tracking, Compress, Break Mode, injury filtering, progress analytics, the post-session recap, friends, challenges and Find a Professional are all on the Free tier. Premium lifts three specific limits rather than gating the training itself.",
       },
     ],
   },
@@ -341,6 +483,7 @@ export const siteConfig = {
           { label: "Features", href: "/#features" },
           { label: "How it works", href: "/#how-it-works" },
           { label: "Comparison", href: "/#comparison" },
+          { label: "Pricing", href: "/#pricing" },
           { label: "FAQ", href: "/#faq" },
         ],
       },

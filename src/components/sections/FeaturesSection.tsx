@@ -41,7 +41,28 @@ export default function FeaturesSection() {
                   i % 2 === 1 ? "md:order-1 md:justify-start" : "md:justify-end"
                 }`}
               >
-                <PhoneFrame src={feature.image} alt={feature.alt} width={260} />
+                {feature.screens.length === 1 ? (
+                  <PhoneFrame
+                    src={feature.screens[0].src}
+                    alt={feature.screens[0].alt}
+                    width={260}
+                  />
+                ) : (
+                  /* Two screens where one screen can't carry the claim — the
+                     capture and its result, the chat and the recap. */
+                  <div className="flex w-full max-w-[440px] items-start gap-4 sm:gap-6">
+                    {feature.screens.map((screen, n) => (
+                      <PhoneFrame
+                        key={screen.src}
+                        src={screen.src}
+                        alt={screen.alt}
+                        width={205}
+                        fluid
+                        className={`min-w-0 grow basis-0 ${n === 1 ? "translate-y-8" : ""}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </FadeInUp>

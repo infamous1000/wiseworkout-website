@@ -13,19 +13,26 @@ export default function PhoneFrame({
   alt,
   width = 260,
   priority = false,
+  fluid = false,
   className = "",
 }: {
   src: string;
   alt: string;
   width?: number;
   priority?: boolean;
+  /* Lets the frame shrink below `width` — used when two frames share one column
+     and have to fit a phone-width viewport between them. */
+  fluid?: boolean;
   className?: string;
 }) {
   return (
     <div
-      className={`relative shrink-0 rounded-[2.2rem] bg-ink p-[3px] ${className}`.trim()}
+      className={`relative rounded-[2.2rem] bg-ink p-[3px] ${
+        fluid ? "w-full" : "shrink-0"
+      } ${className}`.trim()}
       style={{
-        width,
+        width: fluid ? undefined : width,
+        maxWidth: width,
         boxShadow:
           "0 40px 80px -24px rgba(0,0,0,0.28), 0 12px 24px -12px rgba(0,0,0,0.16)",
       }}
