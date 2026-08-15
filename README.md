@@ -66,3 +66,8 @@ through `/api/admin/*` using the Supabase service-role key.
 | `npm run build` | Production build |
 | `npm run start` | Serve the production build |
 | `npm run lint` | ESLint |
+
+## Conventions
+
+`CONTRIBUTING.md` documents the design system, positioning, tone of voice and the
+honesty rules for this project. Read it before changing copy or visuals.
