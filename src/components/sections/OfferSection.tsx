@@ -1,14 +1,10 @@
-"use client";
-
 import Section from "@/components/ui/Section";
 import FadeInUp from "@/components/animations/FadeInUp";
-import { Button } from "@/components/ui/Button";
-import { useWaitlistModal } from "@/components/waitlist/WaitlistModalProvider";
+import DownloadCta from "@/components/ui/DownloadCta";
 import { siteConfig } from "@/content/site-config";
 
 export default function OfferSection() {
-  const { openModal } = useWaitlistModal();
-  const { offer, cta } = siteConfig;
+  const { offer, ctaNote } = siteConfig;
 
   return (
     <Section id="join" surface="dark">
@@ -30,10 +26,10 @@ export default function OfferSection() {
 
       <FadeInUp delay={0.1}>
         <div className="mt-10 flex flex-col items-start gap-4">
-          <Button variant="amber" onClick={openModal}>
-            {cta}
-          </Button>
-          <p className="max-w-[62ch] text-meta text-fog">{offer.riskReversal}</p>
+          <DownloadCta />
+          <p className="max-w-[62ch] text-meta text-fog">
+            {ctaNote} {offer.riskReversal}
+          </p>
         </div>
       </FadeInUp>
     </Section>

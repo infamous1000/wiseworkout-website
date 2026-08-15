@@ -19,15 +19,19 @@ export const siteConfig = {
     { label: "About", href: "/about" },
   ],
 
-  /* One conversion verb. Same words on every button and in the toast it produces.
-     Not "Get Started" — the app is pre-launch, so that would promise access
-     that does not exist yet. */
-  cta: "Get early access",
+  /* One conversion verb. Same words on every amber button. It was "Get early
+     access" while the app was unreleased and the button opened a waitlist form;
+     there is now a real build to install, so the verb is the install. The note
+     goes under every instance — this is a signed APK from Google Drive, not a
+     Play Store listing, and people should know that before they tap. */
+  cta: "Download now",
+  ctaHref:
+    "https://drive.google.com/file/d/15dFHyanQP7_2fPG0UaN9xxHfIJ5WxknD/view?usp=sharing",
+  ctaNote: "Android APK, hosted on Google Drive. No iOS build to download yet.",
 
   announcement: {
-    text: "Beta opens 22 August",
-    linkLabel: "Join the list",
-    href: "/#join",
+    text: "The Android beta build is ready",
+    linkLabel: "Download the APK",
   },
 
   hero: {
@@ -363,12 +367,12 @@ export const siteConfig = {
   },
 
   offer: {
-    heading: "What you get for joining early",
+    heading: "What you get for installing it early",
     lede: "WiseWorkout is a Final Year Project, not a company. There's no plan to buy and no upsell waiting at the end. This is the whole of it.",
     items: [
       {
-        title: "The beta build, before public release",
-        body: "iOS and Android. You get it when the team gets it, not after a launch queue.",
+        title: "The beta build itself",
+        body: "The Android APK, downloaded straight from us. No store listing, no launch queue, no review gate between the build and your phone.",
       },
       {
         title: "A direct line to the five people who built it",
@@ -416,6 +420,11 @@ export const siteConfig = {
     heading: "The questions we actually get",
     items: [
       {
+        question: "How do I install it?",
+        answer:
+          "Download the APK from any of the buttons on this page and open it on an Android phone. Android asks once for permission to install an app from outside the Play Store — that prompt is normal for a build handed out this way. There is no iOS download yet; the mailing list is where that would be announced.",
+      },
+      {
         question: "Is this just another workout tracker?",
         answer:
           "It's the four apps you're already using, in one. Workouts, runs and rides, calories and macros, and the people you train with all sit on the same screen — which means the plan it gives you can account for the whole week instead of one slice of it.",
@@ -456,18 +465,22 @@ export const siteConfig = {
   finalCta: {
     heading: "Your fitness. Your way.",
     lede: "Start building a routine that fits the week you're actually having — not the one a plan assumes you have.",
-    riskReversal: "One email. No card, no ads, leave whenever.",
+    riskReversal: "No card, no ads, and no sale of training data.",
+    /* The one remaining way into the mailing list now that the conversion is a
+       download. iPhone users have no other route in. */
+    waitlistPrompt: "On an iPhone, or want to know when the next build lands?",
+    waitlistLink: "Join the mailing list",
   },
 
   waitlist: {
-    heading: "Get early access",
-    lede: "Beta opens 22 August. We'll email you once — when it's your turn to get in.",
+    heading: "Hear about the next build",
+    lede: "The Android build is already up there. Leave an email and we'll write once, when there's a new one worth installing.",
     inputLabel: "Email",
     placeholder: "you@example.com",
-    submit: "Get early access",
+    submit: "Join the list",
     submitting: "Sending…",
     successTitle: "You're on the list.",
-    successBody: "We'll email you on 22 August when the beta opens. Nothing else.",
+    successBody: "We'll email you when the next build is ready. Nothing else.",
     duplicate: "That address is already on the list. You're set.",
     error: "Something went wrong. Try again in a moment.",
     riskReversal: "No card. No ads. Unsubscribe in one click.",

@@ -2,8 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/content/site-config";
-import { useWaitlistModal } from "@/components/waitlist/WaitlistModalProvider";
-import { Button, ButtonLink } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
+import DownloadCta from "@/components/ui/DownloadCta";
 import NotificationCard from "@/components/ui/NotificationCard";
 import PhoneFrame from "@/components/ui/PhoneFrame";
 
@@ -18,9 +18,8 @@ const placements = [
 ];
 
 export default function HeroSection() {
-  const { openModal } = useWaitlistModal();
   const reduce = useReducedMotion();
-  const { hero, notifications, cta } = siteConfig;
+  const { hero, notifications, ctaNote } = siteConfig;
 
   return (
     <section className="bg-canvas px-6 pb-20 pt-10 md:pb-24 md:pt-14">
@@ -35,13 +34,13 @@ export default function HeroSection() {
           <p className="mx-auto mt-6 max-w-[58ch] text-lede text-carbon">{hero.subhead}</p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button variant="amber" onClick={openModal}>
-              {cta}
-            </Button>
+            <DownloadCta />
             <ButtonLink variant="ghost" href={hero.secondaryHref}>
               {hero.secondaryCta}
             </ButtonLink>
           </div>
+
+          <p className="mt-4 text-meta text-steel">{ctaNote}</p>
         </div>
 
         {/* Signature: four cards orbiting the real app screen. Spent here only. */}

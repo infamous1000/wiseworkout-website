@@ -7,14 +7,12 @@ import { useEffect, useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
-import { useWaitlistModal } from "@/components/waitlist/WaitlistModalProvider";
-import { buttonClass } from "@/components/ui/Button";
+import DownloadCta from "@/components/ui/DownloadCta";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
-  const { openModal } = useWaitlistModal();
   const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 16));
@@ -36,12 +34,14 @@ export default function Navbar() {
             <span aria-hidden className="mx-2 text-white/30">
               ·
             </span>
-            <Link
-              href={siteConfig.announcement.href}
+            <a
+              href={siteConfig.ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
             >
               {siteConfig.announcement.linkLabel} →
-            </Link>
+            </a>
           </p>
         </div>
 
@@ -93,13 +93,7 @@ export default function Navbar() {
             {/* wrapper carries the breakpoint: `hidden` on the button itself
                 would fight the `inline-flex` in buttonClass's base */}
             <div className="hidden shrink-0 md:block">
-              <button
-                type="button"
-                onClick={openModal}
-                className={buttonClass("ghost", "px-4 py-2")}
-              >
-                {siteConfig.cta}
-              </button>
+              <DownloadCta variant="ghost" className="px-4 py-2" />
             </div>
 
             <button
@@ -134,16 +128,10 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            className={buttonClass("amber", "mt-6 w-full")}
-            onClick={() => {
-              setMobileOpen(false);
-              openModal();
-            }}
-          >
-            {siteConfig.cta}
-          </button>
+          <div className="mt-6">
+            <DownloadCta className="w-full" onClick={() => setMobileOpen(false)} />
+            <p className="mt-3 text-meta text-steel">{siteConfig.ctaNote}</p>
+          </div>
         </div>
       ) : null}
     </>

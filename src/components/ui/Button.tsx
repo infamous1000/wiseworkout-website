@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from "react";
 
 /**
  * Four variants, three of which are role-locked:
- *   amber  — the single conversion action ("Join the beta"). Nowhere else.
+ *   amber  — the single conversion action (siteConfig.cta). Nowhere else.
  *   blue   — at most one filled #007bff button per surface (modal + admin form).
  *   ghost  — secondary action on light. Black outline, never blue.
  *   ghostDark — secondary action on dark.
