@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-50">
-        {/* Announcement bar — honest beta status, sets the control-room tone */}
+        {/* Announcement bar — build status, sets the control-room tone */}
         <div className="bg-deep-indigo px-4 py-2 text-center">
           <p className="text-meta font-medium text-white">
             {siteConfig.announcement.text}

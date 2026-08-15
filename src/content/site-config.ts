@@ -22,15 +22,15 @@ export const siteConfig = {
   /* One conversion verb. Same words on every amber button. It was "Get early
      access" while the app was unreleased and the button opened a waitlist form;
      there is now a real build to install, so the verb is the install. The note
-     goes under every instance — this is a signed APK from Google Drive, not a
-     Play Store listing, and people should know that before they tap. */
+     goes under every instance — this is an APK from Google Drive, not a Play
+     Store listing, and people should know that before they tap. */
   cta: "Download now",
   ctaHref:
     "https://drive.google.com/file/d/15dFHyanQP7_2fPG0UaN9xxHfIJ5WxknD/view?usp=sharing",
-  ctaNote: "Android APK, hosted on Google Drive. No iOS build to download yet.",
+  ctaNote: "APK for Android, hosted on Google Drive.",
 
   announcement: {
-    text: "The Android beta build is ready",
+    text: "The Android build is ready",
     linkLabel: "Download the APK",
   },
 
@@ -320,7 +320,7 @@ export const siteConfig = {
     price: "SGD 29",
     priceSuffix: "/ month",
     priceNote:
-      "Payment is not switched on yet. In the current build the Upgrade button reads Coming Soon, and the beta is free.",
+      "Payment is not switched on yet. In the current build the Upgrade button reads Coming Soon, and everything is free.",
     rows: [
       { area: "Plans, tracking, progress and social", free: "Included", premium: "Included" },
       { area: "Compress, Missed Check-in, Break Mode, injury filtering", free: "Included", premium: "Included" },
@@ -371,8 +371,8 @@ export const siteConfig = {
     lede: "WiseWorkout is a Final Year Project, not a company. There's no plan to buy and no upsell waiting at the end. This is the whole of it.",
     items: [
       {
-        title: "The beta build itself",
-        body: "The Android APK, downloaded straight from us. No store listing, no launch queue, no review gate between the build and your phone.",
+        title: "The build itself",
+        body: "The APK for Android, downloaded straight from us. No store listing, no launch queue, no review gate between the build and your phone.",
       },
       {
         title: "A direct line to the five people who built it",
@@ -380,7 +380,7 @@ export const siteConfig = {
       },
       {
         title: "Your feedback answered in writing",
-        body: "Every beta report gets a written response — what we're changing, or why we're not.",
+        body: "Every report gets a written response — what we're changing, or why we're not.",
       },
       {
         title: "Your feedback in the published record",
@@ -422,7 +422,7 @@ export const siteConfig = {
       {
         question: "How do I install it?",
         answer:
-          "Download the APK from any of the buttons on this page and open it on an Android phone. Android asks once for permission to install an app from outside the Play Store — that prompt is normal for a build handed out this way. There is no iOS download yet; the mailing list is where that would be announced.",
+          "Download the APK from any of the buttons on this page and open it on an Android phone. Android asks once for permission to install an app from outside the Play Store — that prompt is normal for an app handed out this way.",
       },
       {
         question: "Is this just another workout tracker?",
@@ -452,7 +452,7 @@ export const siteConfig = {
       {
         question: "What does it cost?",
         answer:
-          "The beta is free. Beyond it there are two tiers: Free keeps the whole core product — planning, tracking, adaptive support, progress, nutrition, social and coaching — while Premium removes the 25-message monthly cap on WiseCoach chat, unlocks photo and barcode food scanning, and lifts the three-challenge limit. Premium is SGD 29 a month, but payment is not connected yet: in the current build the Upgrade button reads Coming Soon.",
+          "Nothing, right now. Beyond that there are two tiers: Free keeps the whole core product — planning, tracking, adaptive support, progress, nutrition, social and coaching — while Premium removes the 25-message monthly cap on WiseCoach chat, unlocks photo and barcode food scanning, and lifts the three-challenge limit. Premium is SGD 29 a month, but payment is not connected yet: in the current build the Upgrade button reads Coming Soon.",
       },
       {
         question: "Do I need Premium to get anything useful?",
@@ -467,8 +467,8 @@ export const siteConfig = {
     lede: "Start building a routine that fits the week you're actually having — not the one a plan assumes you have.",
     riskReversal: "No card, no ads, and no sale of training data.",
     /* The one remaining way into the mailing list now that the conversion is a
-       download. iPhone users have no other route in. */
-    waitlistPrompt: "On an iPhone, or want to know when the next build lands?",
+       download. */
+    waitlistPrompt: "Want to know when the next build lands?",
     waitlistLink: "Join the mailing list",
   },
 
