@@ -68,6 +68,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* The nav is fixed and ~100px tall, so an anchor that scrolls to the top of
+     the viewport lands underneath it. Every #section target clears it. */
+  scroll-padding-top: 108px;
 }
 
 body {

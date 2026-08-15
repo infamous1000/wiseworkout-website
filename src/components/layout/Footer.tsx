@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HashLink from "@/components/ui/HashLink";
 import { siteConfig } from "@/content/site-config";
 
 export default function Footer() {
@@ -33,12 +34,12 @@ export default function Footer() {
               <ul className="mt-4 flex flex-col gap-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <HashLink
                       href={link.href}
                       className="rounded-full text-meta text-silver transition-colors hover:text-white"
                     >
                       {link.label}
-                    </Link>
+                    </HashLink>
                   </li>
                 ))}
               </ul>

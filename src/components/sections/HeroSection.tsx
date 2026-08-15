@@ -2,8 +2,9 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/content/site-config";
-import { ButtonLink } from "@/components/ui/Button";
+import { buttonClass } from "@/components/ui/Button";
 import DownloadCta from "@/components/ui/DownloadCta";
+import HashLink from "@/components/ui/HashLink";
 import NotificationCard from "@/components/ui/NotificationCard";
 import PhoneFrame from "@/components/ui/PhoneFrame";
 
@@ -35,9 +36,9 @@ export default function HeroSection() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <DownloadCta />
-            <ButtonLink variant="ghost" href={hero.secondaryHref}>
+            <HashLink href={hero.secondaryHref} className={buttonClass("ghost")}>
               {hero.secondaryCta}
-            </ButtonLink>
+            </HashLink>
           </div>
 
           <p className="mt-4 text-meta text-steel">{ctaNote}</p>

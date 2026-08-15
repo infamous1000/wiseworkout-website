@@ -8,6 +8,7 @@ import { useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
 import DownloadCta from "@/components/ui/DownloadCta";
+import HashLink from "@/components/ui/HashLink";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -77,14 +78,14 @@ export default function Navbar() {
                 const active = pathname === link.href;
                 return (
                   <li key={link.href}>
-                    <Link
+                    <HashLink
                       href={link.href}
                       className={`rounded-full text-ui font-medium transition-colors ${
                         active ? "text-signal-blue" : "text-ink hover:text-steel"
                       }`}
                     >
                       {link.label}
-                    </Link>
+                    </HashLink>
                   </li>
                 );
               })}
@@ -118,13 +119,13 @@ export default function Navbar() {
           <ul className="flex flex-col gap-1">
             {siteConfig.navLinks.map((link) => (
               <li key={link.href}>
-                <Link
+                <HashLink
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-lg py-3 text-heading-sm font-semibold text-ink"
                 >
                   {link.label}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>
